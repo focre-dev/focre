@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.focre</groupId>
+    <artifactId>focre-parent</artifactId>
+    <version>${focre.version}</version>
+    <packaging>pom</packaging>
+
+    <name>focre-parent</name>
+    <description>FocreBlog-Parent Module</description>
+
+    <modules>
+        <module>focre-base</module>
+        <module>focre-utils</module>
+        <module>focre-rest</module>
+        <module>focre-admin-rest</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <build.java.version>1.8</build.java.version>
+        <build.java.encoding>UTF-8</build.java.encoding>
+        <focre.version>v0.0.1.RELEASE</focre.version>
+        <com.alibaba.druid.version>1.1.21</com.alibaba.druid.version>
+        <com.alibaba.fastjson.version>1.2.62</com.alibaba.fastjson.version>
+        <mybatis-spring-boot-starter.version>2.1.1</mybatis-spring-boot-starter.version>
+        <mybatis-plus.version>3.3.1</mybatis-plus.version>
+        <com.ibeetl.beetl.version>3.0.8.RELEASE</com.ibeetl.beetl.version>
+        <org.apache.velocity.engine.version>2.1</org.apache.velocity.engine.version>
+        <io.springfox.swagger.version>2.9.2</io.springfox.swagger.version>
+        <log4j.version>1.2.17</log4j.version>
+        <org.springframework.boot.version>2.2.4.RELEASE</org.springframework.boot.version>
+        <io.jsonwebtoken.version>0.9.1</io.jsonwebtoken.version>
+        <commons-beanutils.version>1.9.4</commons-beanutils.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.focre</groupId>
+                <artifactId>focre-base</artifactId>
+                <version>${focre.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.focre</groupId>
+                <artifactId>focre-utils</artifactId>
+                <version>${focre.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <encoding>${build.java.encoding}</encoding>
+                        <source>${build.java.version}</source>
+                        <target>${build.java.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

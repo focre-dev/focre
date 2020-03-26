@@ -1,0 +1,52 @@
+####################### 自定义配置 ########################
+#项目名称(主要区分同环境不同项目的服务)
+focre:
+  # 项目名称(主要区分同环境不同项目的服务)
+  projectName: Focre
+  # 授权Token请求头
+  tokenHeader: Authorization
+  # 授权Token请求头值前缀
+  tokenPrefix: Bearer
+  # 客户端类型请求头
+  clientHeader: Client-Type
+  # 需要控制的单设备客户端，不配置则允许同一帐号多设备登录
+  singleLogin-client:
+
+application:
+  version: v0.0.1.RELEASE
+
+#=========================== Spring Common Config ===========================#
+spring:
+  messages:
+    basename: i18n/messages
+    cache-seconds: 3600
+    encoding: UTF-8
+
+#=========================== MyBatis-Plus Common Config ===========================#
+mybatis-plus:
+  mapperLocations: classpath*:com/focre/**/*Mapper.xml
+  typeAliasesPackage: com.focre.**.*.model.entity
+  global-config:
+    id-type: 0
+    db-column-underline: false
+    refresh-mapper: true
+    db-config:
+      logic-not-delete-value: 1
+      logic-delete-value: 2
+      db-type: MYSQL
+  configuration:
+    map-underscore-to-camel-case: false
+    cache-enabled: true
+    lazyLoadingEnabled: true
+    multipleResultSetsEnabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+redis:
+  pool:
+    max-active: 9
+    max-wait: -1
+    max-idle: 8
+    min-idle: 0
+  timeout: 5000
+
+logging:
+  config: classpath:logback-spring-${spring.profiles.active}.xml

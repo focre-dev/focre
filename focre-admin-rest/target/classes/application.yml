@@ -1,0 +1,21 @@
+server:
+  port: ${focre.server.port.adminRest}
+
+#=========================== Spring Config ===========================#
+spring:
+  profiles:
+    active: dev
+    include: common
+  devtools:
+    restart:
+      enabled: true
+
+focre:
+  not-client-auth-path:
+    - /auth/token
+  not-auth-path: /auth/token
+
+
+###################  logging Config  ###################
+logging:
+  file: logs/adminRest.log

@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+#=========================== Spring Config ===========================#
+spring:
+  profiles:
+    active: dev
+    include: common
+  devtools:
+    restart:
+      enabled: true
+
+
+###################  logging Config  ###################
+logging:
+  file: rest.log
