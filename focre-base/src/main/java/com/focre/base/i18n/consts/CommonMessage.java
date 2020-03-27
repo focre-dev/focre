@@ -14,6 +14,9 @@ public enum CommonMessage implements I18nMessage {
     /** 请求参数错误 */
     PARAM_ERROR("common.param.error"),
 
+    /** 帐号密码错误 */
+    AUTH_ERROR("common.auth.error"),
+
     /** 无权限访问 */
     NO_ACCESS("common.no.access"),
 

@@ -23,10 +23,10 @@ import com.focre.base.exception.BusinessException;
 import com.focre.base.i18n.consts.CommonMessage;
 import com.focre.base.i18n.consts.RestMessage;
 import com.focre.base.jwt.JwtTokenService;
+import com.focre.base.redis.RedisKeyEnum;
 import com.focre.base.redis.RedisService;
 import com.focre.base.util.BeanUtil;
 import com.focre.utlis.enums.EnableStatusEnum;
-import com.focre.base.redis.RedisKeyEnum;
 import com.focre.utlis.util.Md5Util;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -109,6 +109,11 @@ public class SysAdminServiceImpl extends ServiceImpl<SysAdminMapper, SysAdmin> i
 		// 如果帐号被禁用则不能登录
 		if (EnableStatusEnum.DISABLE.equalsCode(sysAdmin.getStatus())) {
 			throw new BusinessException(BizExceptionEnum.FAILURE, CommonMessage.ACCOUNT_DISABLE);
+		}
+		// 验证密码
+		String pwd = Md5Util.encrypt(param.getPassword().concat(sysAdmin.getSalt()));
+		if (!pwd.equals(sysAdmin.getPassword())) {
+			throw new BusinessException(BizExceptionEnum.FAILURE, CommonMessage.AUTH_ERROR);
 		}
 		// 获取混淆MD5签名用的随机字符串
 		String randomKey = jwtTokenServiceImpl.getRandomKey();
