@@ -34,8 +34,8 @@ spring:
 focre:
   server:
     port:
-      rest: 8280
-      adminRest: 8281
+      rest: 8080
+      adminRest: 8081
   randomKey: randomKey
   desKey: focredev
   expiration: 0

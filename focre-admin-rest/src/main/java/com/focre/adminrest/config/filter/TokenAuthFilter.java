@@ -17,9 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@Slf4j
-@Component
-public class JwtAuthenticationTokenFilter extends TokenAuthBaseFilter {
+public class TokenAuthFilter extends TokenAuthBaseFilter {
 
     @Autowired
     private RestProperties properties;

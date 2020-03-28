@@ -13,7 +13,8 @@ spring:
 focre:
   not-client-auth-path:
     - /auth/token
-  not-auth-path: /auth/token
+  not-auth-path:
+    - /auth/token
 
 
 ###################  logging Config  ###################
