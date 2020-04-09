@@ -44,6 +44,9 @@ public enum CommonMessage implements I18nMessage {
     /** 您的帐号已在其他地方登陆，请重新登陆 */
     ACCOUNT_OFFLINE("common.account.offline"),
 
+    /** 文件上传失败，请勿上传空文件 */
+    FILE_UPLOAD_IS_EMPTY("common.file.upload.is.empty"),
+
     /** 文件上传失败, 请上传小于{0}M的文件 */
     FILE_UPLOAD_MAX_FAIL("common.file.upload.max.fail"),
 

@@ -8,9 +8,11 @@ import com.focre.base.controller.BaseController;
 import com.focre.base.entity.dto.ResultDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 
 /**
@@ -21,14 +23,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author ye21st
  * @since 2019-11-19
  */
-@Controller
-@RequestMapping("/auth/websiteConfig")
+@RestController
+@RequestMapping("/web/config")
 public class SysWebsiteConfigController extends BaseController {
 
     @Autowired
     private SysWebsiteConfigService sysWebsiteConfigService;
 
-    @PostMapping(value = "/getConfig")
+    @GetMapping
     @ResponseBody
     public ResultDto getConfig(){
         SysWebsiteConfigDto dto = sysWebsiteConfigService.getConfig();

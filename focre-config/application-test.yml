@@ -38,6 +38,7 @@ focre:
   tsDiffer: 180
   # Open Swagger UI docs
   enable-swagger: true
+  filePath: /uploads/
 
 logging:
   level.root: info
