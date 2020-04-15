@@ -1,7 +1,7 @@
 package com.focre.adminrest.modular.common.service.impl;
 
 import com.focre.adminrest.config.RestProperties;
-import com.focre.adminrest.modular.common.FileUploadService;
+import com.focre.adminrest.modular.common.service.FileUploadService;
 import com.focre.base.exception.BizExceptionEnum;
 import com.focre.base.exception.BusinessException;
 import com.focre.base.i18n.consts.CommonMessage;
@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.math.BigDecimal;
 
 /**
  * @ClassName: FileUploadServiceImpl
@@ -56,12 +57,19 @@ public class FileUploadServiceImpl implements FileUploadService {
 
 		// 根据系统设置文件存储位置来存储文件
 
+		// 获取文件后缀名
+		String suffix = FileUtil.getFileType(file);
+		if (null == suffix){
+			log.error("文件上传操作 --- 文件类型不正确或不在允许的范围列表，无法上传。");
+			throw new BusinessException(BizExceptionEnum.FAILURE, CommonMessage.FILE_UPLOAD_FAILURE);
+		}
+
 		// 创建本地文件
 		StringBuilder filename = new StringBuilder();
 		filename.append(DateUtil.formatAllDate())
 				.append(StringUtil.generateRandomString(6))
 				.append(".")
-				.append(FileUtil.getFileType(file));
+				.append(suffix);
 		String filePath = restProperties.getFilePath().concat(FileUtil.getNowDateString());
 		File dir = new File(filePath);
 		// 判断目录是否存在
@@ -72,5 +80,15 @@ public class FileUploadServiceImpl implements FileUploadService {
 		// 把传上来的文件写到本地文件
 		file.transferTo(localFile);
 		return FileUtil.getNowDateString() + "/" + filename;
+//		return restProperties.getFilePath() + FileUtil.getNowDateString() + "/" + filename;
+	}
+
+	public static void main(String[] args) {
+		BigDecimal a1 = new BigDecimal("1.22");
+		BigDecimal a2 = new BigDecimal("1.52");
+		Integer i1 = a1.intValue();
+		Integer i2 = a2.intValue();
+		System.out.println(i1);
+		System.out.println(i2);
 	}
 }

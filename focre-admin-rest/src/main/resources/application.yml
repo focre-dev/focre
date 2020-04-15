@@ -19,4 +19,4 @@ focre:
 
 ###################  logging Config  ###################
 logging:
-  file: logs/adminRest.log
+  file: adminRest.log

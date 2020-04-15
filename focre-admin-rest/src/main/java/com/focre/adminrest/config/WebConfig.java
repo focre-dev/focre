@@ -1,9 +1,11 @@
 package com.focre.adminrest.config;
 
 import com.focre.adminrest.config.filter.TokenAuthFilter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -30,5 +32,4 @@ public class WebConfig implements WebMvcConfigurer {
             .exposedHeaders("Content-Type,Content-Length, Authorization, Accept,X-Requested-With,exchange-token,exchange-language,exchange-client")
             .allowCredentials(false).maxAge(86400);
     }
-
 }

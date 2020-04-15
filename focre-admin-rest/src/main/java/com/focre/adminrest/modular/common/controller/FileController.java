@@ -1,6 +1,6 @@
 package com.focre.adminrest.modular.common.controller;
 
-import com.focre.adminrest.modular.common.FileUploadService;
+import com.focre.adminrest.modular.common.service.FileUploadService;
 import com.focre.base.controller.BaseController;
 import com.focre.base.entity.dto.ResultDto;
 import io.swagger.annotations.Api;
@@ -31,7 +31,16 @@ public class FileController extends BaseController {
 	@PostMapping("/upload")
 	@ApiOperation(value = "上传文件", notes = "上传文件")
 	public ResultDto upload(@RequestParam("file") MultipartFile file, HttpServletRequest req) throws Exception {
+		String realPath = req.getServletContext().getRealPath("/upload");
 		String fileName = fileUploadServiceImpl.uploadFile(file);
+
+		// 获取当前项目运气的完整url
+		String requestUrL = req.getRequestURL().toString();
+		// 获取当前项目的请求路径uri
+		String requestUri = req.getRequestURI();
+		// 得到去掉了uri的路径
+		String url = requestUrL.substring(0, requestUrL.length() - requestUri.length() + 1);
+		fileName = url + "images" + fileName;
 		return resultSuccess(fileName);
 	}
 }

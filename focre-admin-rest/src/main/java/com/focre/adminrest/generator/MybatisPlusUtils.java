@@ -22,7 +22,7 @@ public class MybatisPlusUtils {
         AutoGenerator mpg = new AutoGenerator();
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setOutputDir("D:\\ye21st\\server\\focre-admin-rest\\src\\main\\java");
+        gc.setOutputDir("/Users/ye21st/temp");
         gc.setFileOverride(true);
         gc.setActiveRecord(false);
         gc.setEnableCache(false);// XML 二级缓存
@@ -58,9 +58,9 @@ public class MybatisPlusUtils {
             }
         });
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("focre_dev");
-        dsc.setPassword("iHYYrhMq4wq@KJRaQ6dP8pxlWBNiH4FP");
-        dsc.setUrl("jdbc:mysql://49.233.138.48:3306/focre_dev?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8");
+        dsc.setUsername("root");
+        dsc.setPassword("ffk_jiaoyi");
+        dsc.setUrl("jdbc:mysql://localhost:3306/focre?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8");
         mpg.setDataSource(dsc);
 
 //        dsc.setUsername("root");
@@ -92,8 +92,8 @@ public class MybatisPlusUtils {
         strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
 
-//        strategy.setInclude(new String[] { "sys_user"});
-        pc.setModuleName("auth");
+        strategy.setInclude(new String[] { "sys_options"});
+        pc.setModuleName("system");
 
 
         mpg.setPackageInfo(pc);

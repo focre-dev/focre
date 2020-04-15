@@ -1,7 +1,7 @@
 package com.focre.adminrest.modular.auth.controller;
 
-import com.focre.adminrest.modular.auth.model.param.LoginParam;
-import com.focre.adminrest.modular.auth.service.SysAdminService;
+import com.focre.adminrest.modular.system.model.param.LoginParam;
+import com.focre.adminrest.modular.system.service.SysAdminService;
 import com.focre.base.controller.BaseController;
 import com.focre.base.entity.dto.AuthDto;
 import com.focre.base.entity.dto.ResultDto;
