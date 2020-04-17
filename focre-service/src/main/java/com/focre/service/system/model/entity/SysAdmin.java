@@ -1,4 +1,4 @@
-package com.focre.adminrest.modular.system.model.entity;
+package com.focre.service.system.model.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

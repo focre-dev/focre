@@ -1,6 +1,6 @@
 package com.focre.adminrest.modular.common.controller;
 
-import com.focre.adminrest.modular.common.service.FileUploadService;
+import com.focre.service.common.service.FileUploadService;
 import com.focre.base.controller.BaseController;
 import com.focre.base.entity.dto.ResultDto;
 import io.swagger.annotations.Api;

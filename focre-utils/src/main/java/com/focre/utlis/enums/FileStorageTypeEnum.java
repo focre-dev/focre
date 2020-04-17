@@ -15,7 +15,7 @@ import java.util.Map;
 public enum FileStorageTypeEnum implements BaseEnum<Integer> {
 
     /** 0: 全部 */
-    ALL(0, "全部"),
+    ALL(0, "ALL"),
 
     /** 1: LOCAL */
     LOCAL(1, "LOCAL"),

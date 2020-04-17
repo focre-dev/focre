@@ -1,8 +1,8 @@
-package com.focre.adminrest.modular.system.service;
+package com.focre.service.system.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.focre.adminrest.modular.system.model.entity.SysAdmin;
-import com.focre.adminrest.modular.system.model.param.LoginParam;
+import com.focre.service.system.model.entity.SysAdmin;
+import com.focre.service.system.model.param.LoginParam;
 import com.focre.base.entity.dto.AuthDto;
 
 /**

@@ -15,6 +15,7 @@
         <module>focre-utils</module>
         <module>focre-rest</module>
         <module>focre-admin-rest</module>
+        <module>focre-service</module>
     </modules>
 
     <parent>
@@ -52,6 +53,12 @@
             <dependency>
                 <groupId>com.focre</groupId>
                 <artifactId>focre-utils</artifactId>
+                <version>${focre.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.focre</groupId>
+                <artifactId>focre-service</artifactId>
                 <version>${focre.version}</version>
             </dependency>
         </dependencies>

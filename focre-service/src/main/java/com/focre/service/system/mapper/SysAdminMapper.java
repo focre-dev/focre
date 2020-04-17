@@ -1,7 +1,7 @@
-package com.focre.adminrest.modular.system.mapper;
+package com.focre.service.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.focre.adminrest.modular.system.model.entity.SysAdmin;
+import com.focre.service.system.model.entity.SysAdmin;
 
 /**
  * <p>

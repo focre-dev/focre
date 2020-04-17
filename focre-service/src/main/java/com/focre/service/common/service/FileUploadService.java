@@ -1,4 +1,4 @@
-package com.focre.adminrest.modular.common.service;
+package com.focre.service.common.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -22,12 +22,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.focre</groupId>
-			<artifactId>focre-base</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.focre</groupId>
-			<artifactId>focre-utils</artifactId>
+			<artifactId>focre-service</artifactId>
 		</dependency>
 
 		<dependency>

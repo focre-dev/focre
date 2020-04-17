@@ -1,10 +1,10 @@
-package com.focre.adminrest.modular.common.service.impl;
+package com.focre.service.common.service.impl;
 
-import com.focre.adminrest.config.RestProperties;
-import com.focre.adminrest.modular.common.service.FileUploadService;
+import com.focre.base.config.GlobalProperties;
 import com.focre.base.exception.BizExceptionEnum;
 import com.focre.base.exception.BusinessException;
 import com.focre.base.i18n.consts.CommonMessage;
+import com.focre.service.common.service.FileUploadService;
 import com.focre.utlis.util.DateUtil;
 import com.focre.utlis.util.FileUtil;
 import com.focre.utlis.util.StringUtil;
@@ -31,7 +31,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 	protected Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private RestProperties restProperties;
+	private GlobalProperties restProperties;
 
 	/**
 	 * @description [检查文件是否合法]

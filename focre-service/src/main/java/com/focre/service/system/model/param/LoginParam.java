@@ -1,4 +1,4 @@
-package com.focre.adminrest.modular.system.model.param;
+package com.focre.service.system.model.param;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

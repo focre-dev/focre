@@ -1,11 +1,11 @@
-package com.focre.adminrest.modular.system.service.impl;
+package com.focre.service.system.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.focre.adminrest.modular.system.mapper.SysAdminMapper;
-import com.focre.adminrest.modular.system.model.entity.SysAdmin;
-import com.focre.adminrest.modular.system.model.param.LoginParam;
-import com.focre.adminrest.modular.system.service.SysAdminService;
+import com.focre.service.system.mapper.SysAdminMapper;
+import com.focre.service.system.model.entity.SysAdmin;
+import com.focre.service.system.model.param.LoginParam;
+import com.focre.service.system.service.SysAdminService;
 import com.focre.base.config.GlobalProperties;
 import com.focre.base.entity.dto.AuthDto;
 import com.focre.base.exception.BizExceptionEnum;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.focre.adminrest.modular.system.mapper.SysOptionsMapper">
+<mapper namespace="com.focre.service.system.mapper.SysOptionsMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.focre.adminrest.modular.system.model.entity.SysOptions">
+    <resultMap id="BaseResultMap" type="com.focre.service.system.model.entity.SysOptions">
         <id column="id" property="id" />
         <result column="group_key" property="groupKey" />
         <result column="value_key" property="valueKey" />

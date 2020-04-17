@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>focre-service</artifactId>
+    <packaging>jar</packaging>
+
+    <name>focre-service</name>
+    <description>focre-service</description>
+
+    <parent>
+        <groupId>com.focre</groupId>
+        <artifactId>focre-parent</artifactId>
+        <version>${focre.version}</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.focre</groupId>
+            <artifactId>focre-base</artifactId>
+        </dependency>
+    </dependencies>
+
+  <build>
+      <resources>
+          <resource>
+              <directory>src/main/resources</directory>
+          </resource>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.xml</include>
+              </includes>
+          </resource>
+        </resources>
+  </build>
+</project>
